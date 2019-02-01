@@ -4,6 +4,9 @@
     "react",
     "react-native"
   ],
+  "globals": {
+    "renderer": true
+  },
   "parserOptions": {
     "ecmaFeatures": {
         "jsx": true,
