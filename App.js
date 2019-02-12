@@ -1,28 +1,35 @@
 import React from 'react';
-import { Font } from 'expo';
+import ApolloClient from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import { ApolloLink } from 'apollo-link';
+import { createHttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { setContext } from 'apollo-link-context';
 
-import WelcomeScreen from './screens/WelcomeScreen/WelcomeScreen';
+import AppNavigator from './components/AppNavigator';
+
+const httpLink = createHttpLink({
+  uri: process.env.BASE_URL,
+});
+
+const authLink = setContext((_, { headers }) => ({
+  headers: {
+    ...headers,
+    authorization: process.env.JWT,
+  },
+}));
+
+export const client = new ApolloClient({
+  link: ApolloLink.from([authLink, httpLink]),
+  cache: new InMemoryCache(),
+});
 
 export default class App extends React.Component {
-  state = {
-    fontLoaded: false,
-  };
-
-  async componentDidMount() {
-    /* eslint-disable */
-    await Font.loadAsync({
-      'open-sans-light': require('./assets/fonts/Open_Sans/OpenSans-Light.ttf'),
-      'open-sans-italic': require('./assets/fonts/Open_Sans/OpenSans-Italic.ttf'),
-      'open-sans-regular': require('./assets/fonts/Open_Sans/OpenSans-Regular.ttf'),
-      'open-sans-semi-bold': require('./assets/fonts/Open_Sans/OpenSans-SemiBold.ttf'),
-      'open-sans-bold': require('./assets/fonts/Open_Sans/OpenSans-Bold.ttf'),
-      'open-sans-extra-bold': require('./assets/fonts/Open_Sans/OpenSans-ExtraBold.ttf'),
-    });
-
-    this.setState({ fontLoaded: true });
-  }
-
   render() {
-    return this.state.fontLoaded && <WelcomeScreen />;
+    return (
+      <ApolloProvider client={client}>
+        <AppNavigator />
+      </ApolloProvider>
+    );
   }
 }

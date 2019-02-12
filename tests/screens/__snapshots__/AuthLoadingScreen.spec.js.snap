@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthLoadingScreen renders correctly 1`] = `
+<AuthLoadingScreen
+  navigation={
+    Object {
+      "navigate": [MockFunction],
+    }
+  }
+>
+  <Loader
+    color="#5D59CB"
+    size="large"
+  >
+    <Component
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "justifyContent": "center",
+          },
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+            "padding": 10,
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "justifyContent": "center",
+            },
+            Object {
+              "flexDirection": "row",
+              "justifyContent": "space-around",
+              "padding": 10,
+            },
+          ]
+        }
+      >
+        <Component
+          animating={true}
+          color="#5D59CB"
+          hidesWhenStopped={true}
+          size="large"
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#5D59CB"
+            hidesWhenStopped={true}
+            size="large"
+          />
+        </Component>
+      </View>
+    </Component>
+  </Loader>
+</AuthLoadingScreen>
+`;

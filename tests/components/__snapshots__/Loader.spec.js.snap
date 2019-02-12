@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<Loader
+  color="red"
+  size="40"
+>
+  <Component
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+        },
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "space-around",
+          "padding": 10,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "justifyContent": "center",
+          },
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-around",
+            "padding": 10,
+          },
+        ]
+      }
+    >
+      <Component
+        animating={true}
+        color="red"
+        hidesWhenStopped={true}
+        size="40"
+      >
+        <ActivityIndicator
+          animating={true}
+          color="red"
+          hidesWhenStopped={true}
+          size="40"
+        />
+      </Component>
+    </View>
+  </Component>
+</Loader>
+`;
