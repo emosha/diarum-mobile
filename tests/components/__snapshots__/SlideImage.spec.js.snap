@@ -1,17 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<Image
-  source={
-    Object {
-      "uri": undefined,
+<SlideImage
+  imageSrc={1}
+>
+  <Component
+    source={1}
+    style={
+      Object {
+        "height": "100%",
+        "width": 750,
+      }
     }
-  }
-  style={
-    Object {
-      "height": "100%",
-      "width": 750,
-    }
-  }
-/>
+  >
+    <Image
+      source={1}
+      style={
+        Object {
+          "height": "100%",
+          "width": 750,
+        }
+      }
+    />
+  </Component>
+</SlideImage>
 `;

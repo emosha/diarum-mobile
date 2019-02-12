@@ -5,13 +5,15 @@ import styles from './styles';
 
 export default class SlideImage extends React.Component {
   static propTypes = {
-    imageSrc: PropTypes.string,
+    imageSrc: PropTypes.any.isRequired,
   }
 
   render() {
-    return (<Image
-      source={{ uri: this.props.imageSrc }}
-      style={styles.imageStyle}
-    />);
+    return (
+      <Image
+        source={this.props.imageSrc}
+        style={styles.imageStyle}
+      />
+    );
   }
 }

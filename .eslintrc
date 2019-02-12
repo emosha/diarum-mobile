@@ -5,7 +5,9 @@
     "react-native"
   ],
   "globals": {
-    "renderer": true
+    "renderer": true,
+    "mount": true,
+    "shallow": true
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -23,7 +25,8 @@
     "class-methods-use-this": "off",
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
-    "react-native/no-raw-text": 2
+    "react-native/no-raw-text": 2,
+    "global-require": 0
   },
   "env": {
     "jest": true,

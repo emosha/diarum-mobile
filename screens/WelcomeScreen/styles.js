@@ -4,16 +4,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  top: {
-    flex: 1.88,
-    backgroundColor: 'transparent',
-    position: 'relative',
-  },
-  bottom: {
-    flex: 1,
-    backgroundColor: 'transparent',
-    justifyContent: 'center',
-    alignItems: 'center',
+  imageBackground: {
+    width: '100%',
+    height: '100%',
   },
   pagination: {
     backgroundColor: 'transparent',

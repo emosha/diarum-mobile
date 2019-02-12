@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput renders correctly 1`] = `
+<FormInput
+  disabled={false}
+  error={null}
+  icon="key"
+  inputRef={null}
+  onBlur={[MockFunction]}
+  onChangeText={[MockFunction]}
+  placeholder="Name"
+  returnKeyType="next"
+  touched={false}
+  type="name"
+>
+  <Component
+    style={
+      Object {
+        "marginHorizontal": 20,
+        "marginVertical": 0,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "marginHorizontal": 20,
+          "marginVertical": 0,
+        }
+      }
+    >
+      <ForwardRef(Themed.Input)
+        blurOnSubmit={false}
+        containerStyle={
+          Object {
+            "height": 65,
+            "marginBottom": 25,
+          }
+        }
+        disabled={false}
+        enablesReturnKeyAutomatically={true}
+        error={null}
+        errorMessage={null}
+        icon="key"
+        inputContainerStyle={
+          Object {
+            "borderBottomWidth": 2,
+            "borderColor": "#5D59CB",
+          }
+        }
+        inputRef={null}
+        inputStyle={
+          Object {
+            "color": "#333",
+            "fontSize": 20,
+          }
+        }
+        leftIcon={
+          <Icon
+            allowFontScaling={false}
+            name="key"
+            size={24}
+            style={
+              Object {
+                "color": "#5D59CB",
+                "marginRight": 10,
+              }
+            }
+          />
+        }
+        onBlur={[MockFunction]}
+        onChangeText={[MockFunction]}
+        placeholder="Name"
+        returnKeyType="next"
+        secureTextEntry={false}
+        shake={true}
+        textContentType="name"
+        touched={false}
+        type="name"
+      >
+        <ThemedComponent
+          blurOnSubmit={false}
+          containerStyle={
+            Object {
+              "height": 65,
+              "marginBottom": 25,
+            }
+          }
+          disabled={false}
+          enablesReturnKeyAutomatically={true}
+          error={null}
+          errorMessage={null}
+          forwardedRef={null}
+          icon="key"
+          inputContainerStyle={
+            Object {
+              "borderBottomWidth": 2,
+              "borderColor": "#5D59CB",
+            }
+          }
+          inputRef={null}
+          inputStyle={
+            Object {
+              "color": "#333",
+              "fontSize": 20,
+            }
+          }
+          leftIcon={
+            <Icon
+              allowFontScaling={false}
+              name="key"
+              size={24}
+              style={
+                Object {
+                  "color": "#5D59CB",
+                  "marginRight": 10,
+                }
+              }
+            />
+          }
+          onBlur={[MockFunction]}
+          onChangeText={[MockFunction]}
+          placeholder="Name"
+          returnKeyType="next"
+          secureTextEntry={false}
+          shake={true}
+          textContentType="name"
+          touched={false}
+          type="name"
+        >
+          <Input
+            blurOnSubmit={false}
+            containerStyle={
+              Object {
+                "height": 65,
+                "marginBottom": 25,
+              }
+            }
+            disabled={false}
+            enablesReturnKeyAutomatically={true}
+            error={null}
+            errorMessage={null}
+            icon="key"
+            inputContainerStyle={
+              Object {
+                "borderBottomWidth": 2,
+                "borderColor": "#5D59CB",
+              }
+            }
+            inputRef={null}
+            inputStyle={
+              Object {
+                "color": "#333",
+                "fontSize": 20,
+              }
+            }
+            leftIcon={
+              <Icon
+                allowFontScaling={false}
+                name="key"
+                size={24}
+                style={
+                  Object {
+                    "color": "#5D59CB",
+                    "marginRight": 10,
+                  }
+                }
+              />
+            }
+            onBlur={[MockFunction]}
+            onChangeText={[MockFunction]}
+            placeholder="Name"
+            returnKeyType="next"
+            secureTextEntry={false}
+            shake={true}
+            textContentType="name"
+            theme={
+              Object {
+                "colors": Object {
+                  "disabled": "hsl(208, 8%, 90%)",
+                  "divider": "#bcbbc1",
+                  "error": "#ff190c",
+                  "grey0": "#393e42",
+                  "grey1": "#43484d",
+                  "grey2": "#5e6977",
+                  "grey3": "#86939e",
+                  "grey4": "#bdc6cf",
+                  "grey5": "#e1e8ee",
+                  "greyOutline": "#bbb",
+                  "platform": Object {
+                    "android": Object {
+                      "error": "#f44336",
+                      "primary": "#2196f3",
+                      "secondary": "#9C27B0",
+                      "success": "#4caf50",
+                      "warning": "#ffeb3b",
+                    },
+                    "ios": Object {
+                      "error": "#ff3b30",
+                      "primary": "#007aff",
+                      "secondary": "#5856d6",
+                      "success": "#4cd964",
+                      "warning": "#ffcc00",
+                    },
+                  },
+                  "primary": "#2089dc",
+                  "searchBg": "#303337",
+                  "secondary": "#8F0CE8",
+                  "success": "#52c41a",
+                  "warning": "#faad14",
+                },
+              }
+            }
+            touched={false}
+            type="name"
+          >
+            <Component
+              style={
+                Object {
+                  "height": 65,
+                  "marginBottom": 25,
+                  "paddingHorizontal": 10,
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "height": 65,
+                    "marginBottom": 25,
+                    "paddingHorizontal": 10,
+                    "width": "100%",
+                  }
+                }
+              >
+                <AnimatedComponent
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "borderBottomWidth": 2,
+                      "borderColor": "#5D59CB",
+                      "flexDirection": "row",
+                      "transform": Array [
+                        Object {
+                          "translateX": 0,
+                        },
+                      ],
+                    }
+                  }
+                >
+                  <Component
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "borderBottomWidth": 2,
+                        "borderColor": "#5D59CB",
+                        "flexDirection": "row",
+                        "transform": Array [
+                          Object {
+                            "translateX": 0,
+                          },
+                        ],
+                      }
+                    }
+                  >
+                    <View
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "borderBottomWidth": 2,
+                          "borderColor": "#5D59CB",
+                          "flexDirection": "row",
+                          "transform": Array [
+                            Object {
+                              "translateX": 0,
+                            },
+                          ],
+                        }
+                      }
+                    >
+                      <Component
+                        style={
+                          Object {
+                            "alignItems": "center",
+                            "height": 40,
+                            "justifyContent": "center",
+                            "marginLeft": 15,
+                          }
+                        }
+                      >
+                        <View
+                          style={
+                            Object {
+                              "alignItems": "center",
+                              "height": 40,
+                              "justifyContent": "center",
+                              "marginLeft": 15,
+                            }
+                          }
+                        >
+                          <Icon
+                            allowFontScaling={false}
+                            name="key"
+                            size={24}
+                            style={
+                              Object {
+                                "color": "#5D59CB",
+                                "marginRight": 10,
+                              }
+                            }
+                          >
+                            <Component>
+                              <Text />
+                            </Component>
+                          </Icon>
+                        </View>
+                      </Component>
+                      <TextInput
+                        allowFontScaling={true}
+                        blurOnSubmit={false}
+                        disabled={false}
+                        enablesReturnKeyAutomatically={true}
+                        error={null}
+                        icon="key"
+                        inputRef={null}
+                        onBlur={[MockFunction]}
+                        onChangeText={[MockFunction]}
+                        placeholder="Name"
+                        returnKeyType="next"
+                        secureTextEntry={false}
+                        shake={true}
+                        style={
+                          Object {
+                            "alignSelf": "center",
+                            "color": "#333",
+                            "flex": 1,
+                            "fontSize": 20,
+                            "minHeight": 40,
+                          }
+                        }
+                        testID="RNE__Input__text-input"
+                        textContentType="name"
+                        touched={false}
+                        type="name"
+                        underlineColorAndroid="transparent"
+                      >
+                        <TextInput
+                          allowFontScaling={true}
+                          blurOnSubmit={false}
+                          disabled={false}
+                          enablesReturnKeyAutomatically={true}
+                          error={null}
+                          icon="key"
+                          inputRef={null}
+                          onBlur={[MockFunction]}
+                          onChangeText={[MockFunction]}
+                          placeholder="Name"
+                          returnKeyType="next"
+                          secureTextEntry={false}
+                          shake={true}
+                          style={
+                            Object {
+                              "alignSelf": "center",
+                              "color": "#333",
+                              "flex": 1,
+                              "fontSize": 20,
+                              "minHeight": 40,
+                            }
+                          }
+                          testID="RNE__Input__text-input"
+                          textContentType="name"
+                          touched={false}
+                          type="name"
+                          underlineColorAndroid="transparent"
+                        />
+                      </TextInput>
+                    </View>
+                  </Component>
+                </AnimatedComponent>
+              </View>
+            </Component>
+          </Input>
+        </ThemedComponent>
+      </ForwardRef(Themed.Input)>
+    </View>
+  </Component>
+</FormInput>
+`;
