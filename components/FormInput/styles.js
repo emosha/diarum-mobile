@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   containerStyle: {
     marginBottom: 25,
-    height: 65,
+    height: 60,
   },
   errorStyle: {
     color: 'red',

@@ -10,7 +10,7 @@ describe('SignupScreen', () => {
   let GraphQLComponent;
   let Component;
   let instance;
-  const values = [];
+  const values = ['name', 'username', 'email', 'password'];
   const props = {
     values: mapFieldValues(values, ''),
     touched: mapFieldValues(values, false),
@@ -21,6 +21,9 @@ describe('SignupScreen', () => {
     dirty: false,
     navigation: {
       navigate: jest.fn(),
+    },
+    screenProps: {
+      showDropdownAlert: jest.fn(),
     },
   };
 
@@ -35,7 +38,6 @@ describe('SignupScreen', () => {
 
     instance = Component.find('SignupScreen').instance();
   });
-
   describe('Component', () => {
     it('renders component correctly', () => {
       expect(Component).toMatchSnapshot();
@@ -78,18 +80,6 @@ describe('SignupScreen', () => {
       instance.handleSubmitEditingPassword(createUser)();
 
       expect(createUser).toHaveBeenCalledTimes(1);
-    });
-
-    it('should not submit invalid form', () => {
-      const createUser = jest.fn();
-      instance.handleChange('name')('');
-      instance.handleChange('username')('');
-      instance.handleChange('email')('olisa@emodi.com');
-      instance.handleChange('password')('oleesirsir');
-      instance.handleSubmitEditingPassword(createUser)();
-
-      expect(instance.state.errors.name).toEqual('name is required');
-      expect(instance.state.errors.username).toEqual('username is required');
     });
 
     it('maps error messages to respective fields when form is submitted and graphQLErrors field errors occur', () => {
@@ -146,6 +136,16 @@ describe('SignupScreen', () => {
       instance.componentDidCatch();
 
       expect(instance.state.error).toEqual('Something happened, please try again');
+    });
+
+    it('toggles showPassword value in state', () => {
+      expect(instance.state.showPassword).toEqual(false);
+
+      instance.togglePassword();
+      expect(instance.state.showPassword).toEqual(true);
+
+      instance.togglePassword();
+      expect(instance.state.showPassword).toEqual(false);
     });
   });
 

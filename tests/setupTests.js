@@ -50,6 +50,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import MockAsyncStorage from 'mock-async-storage';
 import { mount, shallow } from 'enzyme';
+import Carousel from 'react-native-snap-carousel';
 
 global.React = React;
 global.renderer = renderer;
@@ -60,4 +61,30 @@ jest.mock('NativeAnimatedHelper');
 jest.useFakeTimers();
 
 const mockAsyncStorage = new MockAsyncStorage();
+class mockScrollView {
+  render() {
+    console.log(props);
+
+    return <Carousel>{props.children}</Carousel>;
+  }
+};
 jest.mock('AsyncStorage', () => mockAsyncStorage);
+jest.mock('ScrollView', () => {
+  const MockScrollView = require.requireMock('ScrollViewMock');
+  const React = require('React');
+  const RealScrollView = require.requireActual('ScrollView');
+
+  class ScrollView extends React.Component {
+    scrollTo() {
+    }
+
+    render() {
+      return (
+        <MockScrollView {...this.props} />
+      );
+    }
+  }
+
+  ScrollView.propTypes = RealScrollView.propTypes;
+  return ScrollView;
+});

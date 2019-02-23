@@ -6,10 +6,12 @@ exports[`FormInput renders correctly 1`] = `
   error={null}
   icon="key"
   inputRef={null}
+  keyboardType="default"
   onBlur={[MockFunction]}
   onChangeText={[MockFunction]}
   placeholder="Name"
   returnKeyType="next"
+  secureTextEntry={false}
   touched={false}
   type="name"
 >
@@ -33,7 +35,7 @@ exports[`FormInput renders correctly 1`] = `
         blurOnSubmit={false}
         containerStyle={
           Object {
-            "height": 65,
+            "height": 60,
             "marginBottom": 25,
           }
         }
@@ -55,6 +57,7 @@ exports[`FormInput renders correctly 1`] = `
             "fontSize": 20,
           }
         }
+        keyboardType="default"
         leftIcon={
           <Icon
             allowFontScaling={false}
@@ -82,7 +85,7 @@ exports[`FormInput renders correctly 1`] = `
           blurOnSubmit={false}
           containerStyle={
             Object {
-              "height": 65,
+              "height": 60,
               "marginBottom": 25,
             }
           }
@@ -105,6 +108,7 @@ exports[`FormInput renders correctly 1`] = `
               "fontSize": 20,
             }
           }
+          keyboardType="default"
           leftIcon={
             <Icon
               allowFontScaling={false}
@@ -132,7 +136,7 @@ exports[`FormInput renders correctly 1`] = `
             blurOnSubmit={false}
             containerStyle={
               Object {
-                "height": 65,
+                "height": 60,
                 "marginBottom": 25,
               }
             }
@@ -154,6 +158,7 @@ exports[`FormInput renders correctly 1`] = `
                 "fontSize": 20,
               }
             }
+            keyboardType="default"
             leftIcon={
               <Icon
                 allowFontScaling={false}
@@ -217,7 +222,7 @@ exports[`FormInput renders correctly 1`] = `
             <Component
               style={
                 Object {
-                  "height": 65,
+                  "height": 60,
                   "marginBottom": 25,
                   "paddingHorizontal": 10,
                   "width": "100%",
@@ -227,7 +232,7 @@ exports[`FormInput renders correctly 1`] = `
               <View
                 style={
                   Object {
-                    "height": 65,
+                    "height": 60,
                     "marginBottom": 25,
                     "paddingHorizontal": 10,
                     "width": "100%",
@@ -324,6 +329,7 @@ exports[`FormInput renders correctly 1`] = `
                         error={null}
                         icon="key"
                         inputRef={null}
+                        keyboardType="default"
                         onBlur={[MockFunction]}
                         onChangeText={[MockFunction]}
                         placeholder="Name"
@@ -353,6 +359,7 @@ exports[`FormInput renders correctly 1`] = `
                           error={null}
                           icon="key"
                           inputRef={null}
+                          keyboardType="default"
                           onBlur={[MockFunction]}
                           onChangeText={[MockFunction]}
                           placeholder="Name"
