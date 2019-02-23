@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
 import {
-  ImageBackground, View, Keyboard, AsyncStorage,
+  ImageBackground, View, Keyboard, AsyncStorage, ScrollView,
 } from 'react-native';
 import { Text, Button } from 'react-native-elements';
 import { Mutation } from 'react-apollo';
-import DropdownAlert from 'react-native-dropdownalert';
 
 import styles from './styles';
 import AppStyles from '../../App.styles';
@@ -24,16 +23,10 @@ class SignupScreen extends React.Component {
     handleSubmit: PropTypes.func.isRequired,
     dirty: PropTypes.bool.isRequired,
     navigation: PropTypes.object.isRequired,
+    screenProps: PropTypes.shape({
+      showDropdownAlert: PropTypes.func.isRequired,
+    }).isRequired,
   };
-
-  constructor(props) {
-    super(props);
-
-    this.name = React.createRef();
-    this.username = React.createRef();
-    this.email = React.createRef();
-    this.password = React.createRef();
-  }
 
   state = {
     error: null,
@@ -49,6 +42,7 @@ class SignupScreen extends React.Component {
       email: false,
       password: false,
     },
+    showPassword: false,
   }
 
   componentDidCatch() {
@@ -60,7 +54,7 @@ class SignupScreen extends React.Component {
    *
    * @param {string} type field
    *
-   * @returns {boolean} alreadyOpened
+   * @returns {func}
    */
   handleChange = type => (value) => {
     this.setState({
@@ -69,9 +63,7 @@ class SignupScreen extends React.Component {
         ...this.state.errors,
         [type]: null,
       },
-    }, () => {
-      this.props.handleChange(type)(value);
-    });
+    }, () => this.props.handleChange(type)(value));
   }
 
   /**
@@ -88,15 +80,12 @@ class SignupScreen extends React.Component {
     this.setTouchedState(field);
 
     if (!isValidInput) {
-      this.setState({
-        errors: {
-          ...this.state.errors,
-          [field]: this.props.errors[field] || `${field} is required`,
-        },
-      });
+      this.setErrorState(field);
+      this[field].focus();
+      return;
     }
 
-    return isValidInput ? this[nextField].focus() : this[field].focus();
+    this[nextField].focus();
   }
 
   /**
@@ -110,9 +99,13 @@ class SignupScreen extends React.Component {
     const isValidInput = this.props.values.password !== '' && !this.props.errors.password;
     this.setTouchedState('password');
 
-    return isValidInput
-      ? this.handleSubmit(createUser, this.props.values)()
-      : this.password.focus();
+    if (!isValidInput) {
+      this.setErrorState('password');
+      this.password.focus();
+      return;
+    }
+
+    this.handleSubmit(createUser, this.props.values)();
   }
 
   /**
@@ -124,32 +117,24 @@ class SignupScreen extends React.Component {
    * @returns {void}
    */
   handleSubmit = (mutation, data) => async () => {
+    Keyboard.dismiss();
+    await mutation({ variables: { data } });
+  }
+
+  /**
+   * Checks if form is valid
+   *
+   * @returns {bool} true or false
+   */
+  isValidForm = () => {
     let isValidForm = true;
-    const touched = {};
-    const errors = {};
     Object.keys(this.props.values).forEach((field) => {
-      if (this.props.values[field] === '') {
+      if (this.props.values[field] === '' || (this.props.values[field] && this.props.errors[field])) {
         isValidForm = false;
-        touched[field] = true;
-        errors[field] = `${field} is required`;
       }
     });
 
-    if (!isValidForm) {
-      this.setState({
-        touched: {
-          ...this.state.touched,
-          ...touched,
-        },
-        errors: {
-          ...this.state.errors,
-          ...errors,
-        },
-      });
-    } else {
-      Keyboard.dismiss();
-      await mutation({ variables: { data } });
-    }
+    return isValidForm;
   }
 
   /**
@@ -158,7 +143,7 @@ class SignupScreen extends React.Component {
    * @returns {void}
    */
   setGlobalError = () => {
-    this.dropdown.alertWithType('error', 'Error', 'Something happened, please try again');
+    this.props.screenProps.showDropdownAlert(true, { type: 'error', title: 'Error', message: 'Something happened, please try again' });
     this.setState({
       error: 'Something happened, please try again',
     });
@@ -176,17 +161,33 @@ class SignupScreen extends React.Component {
   }
 
   /**
-   * Sets touched state
+   * Sets field error state
    *
-   * @param {string} type field
+   * @param {string} field field
    *
    * @returns {void}
    */
-  setTouchedState = (type) => {
+  setErrorState = (field) => {
+    this.setState({
+      errors: {
+        ...this.state.errors,
+        [field]: this.props.errors[field] || `${field} is required`,
+      },
+    });
+  }
+
+  /**
+   * Sets field touched state
+   *
+   * @param {string} field field
+   *
+   * @returns {void}
+   */
+  setTouchedState = (field) => {
     this.setState({
       touched: {
         ...this.state.touched,
-        [type]: true,
+        [field]: true,
       },
     });
   }
@@ -210,6 +211,17 @@ class SignupScreen extends React.Component {
   getTouchedState = type => this.props.touched[type] || this.state.touched[type]
 
   /**
+   * Toggles password view
+   *
+   * @returns {void}
+   */
+  togglePassword = () => {
+    this.setState({
+      showPassword: !this.state.showPassword,
+    });
+  }
+
+  /**
    * Map error message
    *
    * @param {object} errors
@@ -222,7 +234,7 @@ class SignupScreen extends React.Component {
       graphQLErrors.map((error) => {
         if (error.code && error.code.type === 'BAD_USER_INPUT') {
           const fieldErrors = error.code.details.reduce((errObj, err) => {
-            errObj[err.field] = err.message; /* eslint-disable-line */
+            errObj[err.field] = err.message;
 
             return errObj;
           }, {});
@@ -262,6 +274,7 @@ class SignupScreen extends React.Component {
   render() {
     const { values, handleBlur, dirty } = this.props;
     const { SIGNUP } = userQuery;
+    const isValidForm = this.isValidForm();
 
     return (
       <Mutation
@@ -270,85 +283,86 @@ class SignupScreen extends React.Component {
         onCompleted={this.updateAuthStorage}
       >
         {(createUser, { loading }) => (
-          <ImageBackground source={require('../../assets/images/diarum-welcome.png')} style={styles.imageBackground}>
-            <View style={styles.container}>
-              <View style={AppStyles.authTop}>
-                <Text style={styles.header}>SIGN UP</Text>
-                <FormInput
-                  placeholder="Name"
-                  icon="user"
-                  type="name"
-                  onChangeText={this.handleChange('name')}
-                  onBlur={handleBlur('name')}
-                  value={values.name}
-                  touched={this.getTouchedState('name')}
-                  error={this.getErrorState('name')}
-                  returnKeyType="next"
-                  inputRef={this.setInputRef('name')}
-                  onSubmitEditing={this.handleSubmitEditing('name', 'username')}
-                />
-                <FormInput
-                  placeholder="Username"
-                  icon="smileo"
-                  type="username"
-                  onChangeText={this.handleChange('username')}
-                  onBlur={handleBlur('username')}
-                  value={values.username}
-                  touched={this.getTouchedState('username')}
-                  error={this.getErrorState('username')}
-                  returnKeyType="next"
-                  inputRef={this.setInputRef('username')}
-                  onSubmitEditing={this.handleSubmitEditing('username', 'email')}
-                />
-                <FormInput
-                  placeholder="Email"
-                  icon="mail"
-                  type="emailAddress"
-                  onChangeText={this.handleChange('email')}
-                  onBlur={handleBlur('email')}
-                  value={values.email}
-                  touched={this.getTouchedState('email')}
-                  error={this.getErrorState('email')}
-                  returnKeyType="next"
-                  inputRef={this.setInputRef('email')}
-                  onSubmitEditing={this.handleSubmitEditing('email', 'password')}
-                />
-                <FormInput
-                  placeholder="Password"
-                  icon="key"
-                  type="password"
-                  onChangeText={this.handleChange('password')}
-                  onBlur={handleBlur('password')}
-                  value={values.password}
-                  touched={this.getTouchedState('password')}
-                  error={this.getErrorState('password')}
-                  returnKeyType="done"
-                  inputRef={this.setInputRef('password')}
-                  onSubmitEditing={this.handleSubmitEditingPassword(createUser)}
-                />
+          <ScrollView>
+            <ImageBackground source={require('../../assets/images/diarum-welcome.png')} style={styles.imageBackground}>
+              <View style={styles.container}>
+                <View style={AppStyles.authTop}>
+                  <Text style={styles.header}>SIGN UP</Text>
+                  <FormInput
+                    placeholder="Name"
+                    icon="user"
+                    type="name"
+                    onChangeText={this.handleChange('name')}
+                    onBlur={handleBlur('name')}
+                    value={values.name}
+                    touched={this.getTouchedState('name')}
+                    error={this.getErrorState('name')}
+                    returnKeyType="next"
+                    inputRef={this.setInputRef('name')}
+                    onSubmitEditing={this.handleSubmitEditing('name', 'username')}
+                  />
+                  <FormInput
+                    placeholder="Username"
+                    icon="smileo"
+                    type="username"
+                    onChangeText={this.handleChange('username')}
+                    onBlur={handleBlur('username')}
+                    value={values.username}
+                    touched={this.getTouchedState('username')}
+                    error={this.getErrorState('username')}
+                    returnKeyType="next"
+                    inputRef={this.setInputRef('username')}
+                    onSubmitEditing={this.handleSubmitEditing('username', 'email')}
+                  />
+                  <FormInput
+                    placeholder="Email"
+                    icon="mail"
+                    type="emailAddress"
+                    keyboardType="email-address"
+                    onChangeText={this.handleChange('email')}
+                    onBlur={handleBlur('email')}
+                    value={values.email}
+                    touched={this.getTouchedState('email')}
+                    error={this.getErrorState('email')}
+                    returnKeyType="next"
+                    inputRef={this.setInputRef('email')}
+                    onSubmitEditing={this.handleSubmitEditing('email', 'password')}
+                  />
+                  <FormInput
+                    placeholder="Password"
+                    icon="key"
+                    type="password"
+                    onChangeText={this.handleChange('password')}
+                    onBlur={handleBlur('password')}
+                    value={values.password}
+                    touched={this.getTouchedState('password')}
+                    error={this.getErrorState('password')}
+                    returnKeyType="done"
+                    inputRef={this.setInputRef('password')}
+                    onSubmitEditing={this.handleSubmitEditingPassword(createUser)}
+                    iconRight={this.state.showPassword ? 'eye-slash' : 'eye'}
+                    secureTextEntry={!this.state.showPassword}
+                    togglePassword={this.togglePassword}
+                  />
+                </View>
+                <View style={AppStyles.authBottom}>
+                  <Button
+                    raised
+                    title="SIGN UP"
+                    buttonStyle={[AppStyles.buttonStyle, styles.buttonStyle]}
+                    containerStyle={styles.buttonContainerStyle}
+                    titleStyle={AppStyles.buttonTitleStyle}
+                    disabledStyle={AppStyles.disabledButtonStyle}
+                    disabledTitleStyle={AppStyles.buttonTextColor}
+                    loadingProps={{ color: '#5d59cb' }}
+                    onPress={this.handleSubmit(createUser, this.props.values)}
+                    disabled={!dirty || loading || !isValidForm}
+                    loading={loading}
+                  />
+                </View>
               </View>
-              <View style={AppStyles.authBottom}>
-                <Button
-                  raised
-                  title="SIGN UP"
-                  buttonStyle={[AppStyles.buttonStyle, styles.buttonStyle]}
-                  containerStyle={styles.buttonContainerStyle}
-                  titleStyle={AppStyles.buttonTitleStyle}
-                  disabledStyle={AppStyles.disabledButtonStyle}
-                  disabledTitleStyle={AppStyles.buttonTextColor}
-                  loadingProps={{ color: '#5d59cb' }}
-                  onPress={this.handleSubmit(createUser, this.props.values)}
-                  disabled={!dirty || loading}
-                  loading={loading}
-                />
-              </View>
-            </View>
-            <DropdownAlert
-              ref={ref => this.dropdown = ref}
-              defaultContainer={{ paddingTop: 20 }}
-              testID="dropdown-alert"
-            />
-          </ImageBackground>
+            </ImageBackground>
+          </ScrollView>
         ) }
       </Mutation>
     );

@@ -92,7 +92,7 @@ exports[`WelcomeScreen renders correctly 1`] = `
               style={
                 Object {
                   "backgroundColor": "transparent",
-                  "flex": 1.88,
+                  "flex": 2,
                   "position": "relative",
                 }
               }
@@ -101,7 +101,7 @@ exports[`WelcomeScreen renders correctly 1`] = `
                 style={
                   Object {
                     "backgroundColor": "transparent",
-                    "flex": 1.88,
+                    "flex": 2,
                     "position": "relative",
                   }
                 }
@@ -177,6 +177,7 @@ exports[`WelcomeScreen renders correctly 1`] = `
                   "backgroundColor": "transparent",
                   "flex": 1,
                   "justifyContent": "center",
+                  "marginBottom": 50,
                 }
               }
             >
@@ -187,6 +188,7 @@ exports[`WelcomeScreen renders correctly 1`] = `
                     "backgroundColor": "transparent",
                     "flex": 1,
                     "justifyContent": "center",
+                    "marginBottom": 50,
                   }
                 }
               >

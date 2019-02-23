@@ -2,11 +2,10 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 50,
-    paddingBottom: 50,
-    paddingLeft: 10,
-    paddingRight: 10,
+    display: 'flex',
+    paddingTop: 30,
+    paddingBottom: 6,
+    paddingHorizontal: 10,
   },
   imageBackground: {
     width: '100%',
@@ -19,10 +18,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#5D59CB',
     marginBottom: 20,
-    fontSize: 35,
+    fontSize: 25,
   },
   buttonContainerStyle: {
-    marginTop: 90,
+    marginTop: 70,
   },
   buttonStyle: {
     height: 70,

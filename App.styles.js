@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 const AppStyles = StyleSheet.create({
   authTop: {
-    flex: 1.88,
+    flex: 2,
     backgroundColor: 'transparent',
     position: 'relative',
   },
@@ -11,6 +11,7 @@ const AppStyles = StyleSheet.create({
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 50,
   },
   buttonStyle: {
     backgroundColor: '#F5BDBA',

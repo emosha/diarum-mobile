@@ -1,26 +1,903 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "flex": 1,
-        "justifyContent": "center",
-      },
-      Object {
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-        "padding": 10,
-      },
-    ]
-  }
->
-  <ActivityIndicator
-    animating={true}
-    color="#5D59CB"
-    hidesWhenStopped={true}
-    size="large"
-  />
-</View>
+exports[`App renders correctly 1`] = `
+<App>
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {},
+        "cache": InMemoryCache {
+          "addTypename": true,
+          "cacheKeyRoot": CacheKeyNode {
+            "children": null,
+            "key": null,
+          },
+          "config": Object {
+            "addTypename": true,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "resultCaching": true,
+          },
+          "data": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
+          "maybeBroadcastWatch": [Function],
+          "optimisticData": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
+          "silenceBroadcast": false,
+          "storeReader": StoreReader {
+            "cacheKeyRoot": CacheKeyNode {
+              "children": null,
+              "key": null,
+            },
+            "executeSelectionSet": [Function],
+            "executeStoreQuery": [Function],
+          },
+          "storeWriter": StoreWriter {},
+          "typenameDocumentCache": Map {},
+          "watches": Set {},
+        },
+        "clearStoreCallbacks": Array [],
+        "clientAwareness": Object {},
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": true,
+            "cacheKeyRoot": CacheKeyNode {
+              "children": null,
+              "key": null,
+            },
+            "config": Object {
+              "addTypename": true,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "resultCaching": true,
+            },
+            "data": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "silenceBroadcast": false,
+            "storeReader": StoreReader {
+              "cacheKeyRoot": CacheKeyNode {
+                "children": null,
+                "key": null,
+              },
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {},
+          },
+        },
+        "version": "2.4.12",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <NavigationContainer
+      screenProps={
+        Object {
+          "showDropdownAlert": [Function],
+        }
+      }
+    >
+      <Navigator
+        navigation={
+          Object {
+            "_childrenNavigation": Object {
+              "App": Object {
+                "actions": Object {
+                  "goBack": [Function],
+                  "navigate": [Function],
+                  "setParams": [Function],
+                },
+                "addListener": [Function],
+                "dangerouslyGetParent": [Function],
+                "dispatch": [Function],
+                "emit": [Function],
+                "getChildNavigation": [Function],
+                "getParam": [Function],
+                "getScreenProps": [Function],
+                "goBack": [Function],
+                "isFocused": [Function],
+                "navigate": [Function],
+                "router": Object {
+                  "childRouters": Object {
+                    "Home": null,
+                  },
+                  "getActionCreators": [Function],
+                  "getActionForPathAndParams": [Function],
+                  "getComponentForRouteName": [Function],
+                  "getComponentForState": [Function],
+                  "getPathAndParamsForState": [Function],
+                  "getScreenOptions": [Function],
+                  "getStateForAction": [Function],
+                },
+                "setParams": [Function],
+                "state": Object {
+                  "index": 0,
+                  "isTransitioning": false,
+                  "key": "App",
+                  "params": undefined,
+                  "routeName": "App",
+                  "routes": Array [
+                    Object {
+                      "key": "Home",
+                      "params": undefined,
+                      "routeName": "Home",
+                    },
+                  ],
+                },
+              },
+              "AuthLoading": Object {
+                "actions": Object {
+                  "goBack": [Function],
+                  "navigate": [Function],
+                  "setParams": [Function],
+                },
+                "addListener": [Function],
+                "dangerouslyGetParent": [Function],
+                "dispatch": [Function],
+                "emit": [Function],
+                "getChildNavigation": [Function],
+                "getParam": [Function],
+                "getScreenProps": [Function],
+                "goBack": [Function],
+                "isFocused": [Function],
+                "navigate": [Function],
+                "router": undefined,
+                "setParams": [Function],
+                "state": Object {
+                  "key": "AuthLoading",
+                  "params": undefined,
+                  "routeName": "AuthLoading",
+                },
+              },
+              "Signup": Object {
+                "actions": Object {
+                  "goBack": [Function],
+                  "navigate": [Function],
+                  "setParams": [Function],
+                },
+                "addListener": [Function],
+                "dangerouslyGetParent": [Function],
+                "dispatch": [Function],
+                "emit": [Function],
+                "getChildNavigation": [Function],
+                "getParam": [Function],
+                "getScreenProps": [Function],
+                "goBack": [Function],
+                "isFocused": [Function],
+                "navigate": [Function],
+                "router": undefined,
+                "setParams": [Function],
+                "state": Object {
+                  "key": "Signup",
+                  "params": undefined,
+                  "routeName": "Signup",
+                },
+              },
+              "Welcome": Object {
+                "actions": Object {
+                  "goBack": [Function],
+                  "navigate": [Function],
+                  "setParams": [Function],
+                },
+                "addListener": [Function],
+                "dangerouslyGetParent": [Function],
+                "dispatch": [Function],
+                "emit": [Function],
+                "getChildNavigation": [Function],
+                "getParam": [Function],
+                "getScreenProps": [Function],
+                "goBack": [Function],
+                "isFocused": [Function],
+                "navigate": [Function],
+                "router": undefined,
+                "setParams": [Function],
+                "state": Object {
+                  "key": "Welcome",
+                  "params": undefined,
+                  "routeName": "Welcome",
+                },
+              },
+            },
+            "actions": Object {},
+            "addListener": [Function],
+            "dangerouslyGetParent": [Function],
+            "dispatch": [Function],
+            "getChildNavigation": [Function],
+            "getScreenProps": [Function],
+            "goBack": [Function],
+            "isFocused": [Function],
+            "navigate": [Function],
+            "router": Object {
+              "childRouters": Object {
+                "App": Object {
+                  "childRouters": Object {
+                    "Home": null,
+                  },
+                  "getActionCreators": [Function],
+                  "getActionForPathAndParams": [Function],
+                  "getComponentForRouteName": [Function],
+                  "getComponentForState": [Function],
+                  "getPathAndParamsForState": [Function],
+                  "getScreenOptions": [Function],
+                  "getStateForAction": [Function],
+                },
+                "AuthLoading": null,
+                "Signup": null,
+                "Welcome": null,
+              },
+              "getActionCreators": [Function],
+              "getActionForPathAndParams": [Function],
+              "getComponentForRouteName": [Function],
+              "getComponentForState": [Function],
+              "getPathAndParamsForState": [Function],
+              "getScreenOptions": [Function],
+              "getStateForAction": [Function],
+            },
+            "setParams": [Function],
+            "state": Object {
+              "index": 3,
+              "isTransitioning": false,
+              "routes": Array [
+                Object {
+                  "index": 0,
+                  "isTransitioning": false,
+                  "key": "App",
+                  "params": undefined,
+                  "routeName": "App",
+                  "routes": Array [
+                    Object {
+                      "key": "Home",
+                      "params": undefined,
+                      "routeName": "Home",
+                    },
+                  ],
+                },
+                Object {
+                  "key": "Signup",
+                  "params": undefined,
+                  "routeName": "Signup",
+                },
+                Object {
+                  "key": "Welcome",
+                  "params": undefined,
+                  "routeName": "Welcome",
+                },
+                Object {
+                  "key": "AuthLoading",
+                  "params": undefined,
+                  "routeName": "AuthLoading",
+                },
+              ],
+            },
+          }
+        }
+        screenProps={
+          Object {
+            "showDropdownAlert": [Function],
+          }
+        }
+      >
+        <SwitchView
+          descriptors={
+            Object {
+              "App": Object {
+                "getComponent": [Function],
+                "key": "App",
+                "navigation": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": Object {
+                    "childRouters": Object {
+                      "Home": null,
+                    },
+                    "getActionCreators": [Function],
+                    "getActionForPathAndParams": [Function],
+                    "getComponentForRouteName": [Function],
+                    "getComponentForState": [Function],
+                    "getPathAndParamsForState": [Function],
+                    "getScreenOptions": [Function],
+                    "getStateForAction": [Function],
+                  },
+                  "setParams": [Function],
+                  "state": Object {
+                    "index": 0,
+                    "isTransitioning": false,
+                    "key": "App",
+                    "params": undefined,
+                    "routeName": "App",
+                    "routes": Array [
+                      Object {
+                        "key": "Home",
+                        "params": undefined,
+                        "routeName": "Home",
+                      },
+                    ],
+                  },
+                },
+                "options": Object {},
+                "state": Object {
+                  "index": 0,
+                  "isTransitioning": false,
+                  "key": "App",
+                  "params": undefined,
+                  "routeName": "App",
+                  "routes": Array [
+                    Object {
+                      "key": "Home",
+                      "params": undefined,
+                      "routeName": "Home",
+                    },
+                  ],
+                },
+              },
+              "AuthLoading": Object {
+                "getComponent": [Function],
+                "key": "AuthLoading",
+                "navigation": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": undefined,
+                  "setParams": [Function],
+                  "state": Object {
+                    "key": "AuthLoading",
+                    "params": undefined,
+                    "routeName": "AuthLoading",
+                  },
+                },
+                "options": Object {},
+                "state": Object {
+                  "key": "AuthLoading",
+                  "params": undefined,
+                  "routeName": "AuthLoading",
+                },
+              },
+              "Signup": Object {
+                "getComponent": [Function],
+                "key": "Signup",
+                "navigation": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": undefined,
+                  "setParams": [Function],
+                  "state": Object {
+                    "key": "Signup",
+                    "params": undefined,
+                    "routeName": "Signup",
+                  },
+                },
+                "options": Object {},
+                "state": Object {
+                  "key": "Signup",
+                  "params": undefined,
+                  "routeName": "Signup",
+                },
+              },
+              "Welcome": Object {
+                "getComponent": [Function],
+                "key": "Welcome",
+                "navigation": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": undefined,
+                  "setParams": [Function],
+                  "state": Object {
+                    "key": "Welcome",
+                    "params": undefined,
+                    "routeName": "Welcome",
+                  },
+                },
+                "options": Object {},
+                "state": Object {
+                  "key": "Welcome",
+                  "params": undefined,
+                  "routeName": "Welcome",
+                },
+              },
+            }
+          }
+          navigation={
+            Object {
+              "_childrenNavigation": Object {
+                "App": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": Object {
+                    "childRouters": Object {
+                      "Home": null,
+                    },
+                    "getActionCreators": [Function],
+                    "getActionForPathAndParams": [Function],
+                    "getComponentForRouteName": [Function],
+                    "getComponentForState": [Function],
+                    "getPathAndParamsForState": [Function],
+                    "getScreenOptions": [Function],
+                    "getStateForAction": [Function],
+                  },
+                  "setParams": [Function],
+                  "state": Object {
+                    "index": 0,
+                    "isTransitioning": false,
+                    "key": "App",
+                    "params": undefined,
+                    "routeName": "App",
+                    "routes": Array [
+                      Object {
+                        "key": "Home",
+                        "params": undefined,
+                        "routeName": "Home",
+                      },
+                    ],
+                  },
+                },
+                "AuthLoading": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": undefined,
+                  "setParams": [Function],
+                  "state": Object {
+                    "key": "AuthLoading",
+                    "params": undefined,
+                    "routeName": "AuthLoading",
+                  },
+                },
+                "Signup": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": undefined,
+                  "setParams": [Function],
+                  "state": Object {
+                    "key": "Signup",
+                    "params": undefined,
+                    "routeName": "Signup",
+                  },
+                },
+                "Welcome": Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": undefined,
+                  "setParams": [Function],
+                  "state": Object {
+                    "key": "Welcome",
+                    "params": undefined,
+                    "routeName": "Welcome",
+                  },
+                },
+              },
+              "actions": Object {},
+              "addListener": [Function],
+              "dangerouslyGetParent": [Function],
+              "dispatch": [Function],
+              "getChildNavigation": [Function],
+              "getScreenProps": [Function],
+              "goBack": [Function],
+              "isFocused": [Function],
+              "navigate": [Function],
+              "router": Object {
+                "childRouters": Object {
+                  "App": Object {
+                    "childRouters": Object {
+                      "Home": null,
+                    },
+                    "getActionCreators": [Function],
+                    "getActionForPathAndParams": [Function],
+                    "getComponentForRouteName": [Function],
+                    "getComponentForState": [Function],
+                    "getPathAndParamsForState": [Function],
+                    "getScreenOptions": [Function],
+                    "getStateForAction": [Function],
+                  },
+                  "AuthLoading": null,
+                  "Signup": null,
+                  "Welcome": null,
+                },
+                "getActionCreators": [Function],
+                "getActionForPathAndParams": [Function],
+                "getComponentForRouteName": [Function],
+                "getComponentForState": [Function],
+                "getPathAndParamsForState": [Function],
+                "getScreenOptions": [Function],
+                "getStateForAction": [Function],
+              },
+              "setParams": [Function],
+              "state": Object {
+                "index": 3,
+                "isTransitioning": false,
+                "routes": Array [
+                  Object {
+                    "index": 0,
+                    "isTransitioning": false,
+                    "key": "App",
+                    "params": undefined,
+                    "routeName": "App",
+                    "routes": Array [
+                      Object {
+                        "key": "Home",
+                        "params": undefined,
+                        "routeName": "Home",
+                      },
+                    ],
+                  },
+                  Object {
+                    "key": "Signup",
+                    "params": undefined,
+                    "routeName": "Signup",
+                  },
+                  Object {
+                    "key": "Welcome",
+                    "params": undefined,
+                    "routeName": "Welcome",
+                  },
+                  Object {
+                    "key": "AuthLoading",
+                    "params": undefined,
+                    "routeName": "AuthLoading",
+                  },
+                ],
+              },
+            }
+          }
+          navigationConfig={
+            Object {
+              "initialRouteName": "AuthLoading",
+            }
+          }
+          screenProps={
+            Object {
+              "showDropdownAlert": [Function],
+            }
+          }
+        >
+          <SceneView
+            component={[Function]}
+            navigation={
+              Object {
+                "actions": Object {
+                  "goBack": [Function],
+                  "navigate": [Function],
+                  "setParams": [Function],
+                },
+                "addListener": [Function],
+                "dangerouslyGetParent": [Function],
+                "dispatch": [Function],
+                "emit": [Function],
+                "getChildNavigation": [Function],
+                "getParam": [Function],
+                "getScreenProps": [Function],
+                "goBack": [Function],
+                "isFocused": [Function],
+                "navigate": [Function],
+                "router": undefined,
+                "setParams": [Function],
+                "state": Object {
+                  "key": "AuthLoading",
+                  "params": undefined,
+                  "routeName": "AuthLoading",
+                },
+              }
+            }
+            screenProps={
+              Object {
+                "showDropdownAlert": [Function],
+              }
+            }
+          >
+            <AuthLoadingScreen
+              navigation={
+                Object {
+                  "actions": Object {
+                    "goBack": [Function],
+                    "navigate": [Function],
+                    "setParams": [Function],
+                  },
+                  "addListener": [Function],
+                  "dangerouslyGetParent": [Function],
+                  "dispatch": [Function],
+                  "emit": [Function],
+                  "getChildNavigation": [Function],
+                  "getParam": [Function],
+                  "getScreenProps": [Function],
+                  "goBack": [Function],
+                  "isFocused": [Function],
+                  "navigate": [Function],
+                  "router": undefined,
+                  "setParams": [Function],
+                  "state": Object {
+                    "key": "AuthLoading",
+                    "params": undefined,
+                    "routeName": "AuthLoading",
+                  },
+                }
+              }
+              screenProps={
+                Object {
+                  "showDropdownAlert": [Function],
+                }
+              }
+            >
+              <Loader
+                color="#5D59CB"
+                size="large"
+              >
+                <Component
+                  style={
+                    Array [
+                      Object {
+                        "flex": 1,
+                        "justifyContent": "center",
+                      },
+                      Object {
+                        "flexDirection": "row",
+                        "justifyContent": "space-around",
+                        "padding": 10,
+                      },
+                    ]
+                  }
+                >
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "flex": 1,
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "flexDirection": "row",
+                          "justifyContent": "space-around",
+                          "padding": 10,
+                        },
+                      ]
+                    }
+                  >
+                    <Component
+                      animating={true}
+                      color="#5D59CB"
+                      hidesWhenStopped={true}
+                      size="large"
+                    >
+                      <ActivityIndicator
+                        animating={true}
+                        color="#5D59CB"
+                        hidesWhenStopped={true}
+                        size="large"
+                      />
+                    </Component>
+                  </View>
+                </Component>
+              </Loader>
+            </AuthLoadingScreen>
+          </SceneView>
+        </SwitchView>
+      </Navigator>
+    </NavigationContainer>
+    <DropdownAlert
+      options={Object {}}
+      showAlert={false}
+    >
+      <DropdownAlert
+        accessible={false}
+        activeStatusBarBackgroundColor="black"
+        activeStatusBarStyle="light-content"
+        cancelBtnImageSrc={1}
+        cancelBtnImageStyle={
+          Object {
+            "alignSelf": "center",
+            "height": 36,
+            "padding": 8,
+            "width": 36,
+          }
+        }
+        closeInterval={4000}
+        containerStyle={
+          Object {
+            "flexDirection": "row",
+            "padding": 16,
+          }
+        }
+        defaultContainer={
+          Object {
+            "flexDirection": "row",
+            "padding": 8,
+            "paddingTop": 20,
+          }
+        }
+        defaultTextContainer={
+          Object {
+            "flex": 1,
+            "padding": 8,
+          }
+        }
+        elevation={1}
+        endDelta={0}
+        errorColor="#cc3232"
+        errorImageSrc={1}
+        imageSrc={null}
+        imageStyle={
+          Object {
+            "alignSelf": "center",
+            "height": 36,
+            "padding": 8,
+            "width": 36,
+          }
+        }
+        inactiveStatusBarBackgroundColor="black"
+        inactiveStatusBarStyle="default"
+        infoColor="#2B73B6"
+        infoImageSrc={1}
+        messageNumOfLines={3}
+        messageStyle={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "white",
+            "fontSize": 14,
+            "fontWeight": "normal",
+            "textAlign": "left",
+          }
+        }
+        onCancel={null}
+        onClose={null}
+        panResponderEnabled={true}
+        replaceEnabled={true}
+        safeAreaStyle={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+          }
+        }
+        sensitivity={20}
+        showCancel={false}
+        startDelta={-100}
+        successColor="#32A54A"
+        successImageSrc={1}
+        tapToCloseEnabled={true}
+        testID="dropdown-alert"
+        titleNumOfLines={1}
+        titleStyle={
+          Object {
+            "backgroundColor": "transparent",
+            "color": "white",
+            "fontSize": 16,
+            "fontWeight": "bold",
+            "textAlign": "left",
+          }
+        }
+        translucent={false}
+        updateStatusBar={true}
+        useNativeDriver={true}
+        warnColor="#cd853f"
+        warnImageSrc={1}
+        wrapperStyle={null}
+        zIndex={null}
+      />
+    </DropdownAlert>
+  </ApolloProvider>
+</App>
 `;

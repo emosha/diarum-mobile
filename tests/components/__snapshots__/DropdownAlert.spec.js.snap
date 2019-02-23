@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownAlert renders correctly 1`] = `
+<DropdownAlert
+  options={
+    Object {
+      "interval": 2000,
+      "message": "an error",
+      "title": "Error",
+      "type": "error",
+    }
+  }
+  showAlert={false}
+>
+  <DropdownAlert
+    accessible={false}
+    activeStatusBarBackgroundColor="black"
+    activeStatusBarStyle="light-content"
+    cancelBtnImageSrc={1}
+    cancelBtnImageStyle={
+      Object {
+        "alignSelf": "center",
+        "height": 36,
+        "padding": 8,
+        "width": 36,
+      }
+    }
+    closeInterval={4000}
+    containerStyle={
+      Object {
+        "flexDirection": "row",
+        "padding": 16,
+      }
+    }
+    defaultContainer={
+      Object {
+        "flexDirection": "row",
+        "padding": 8,
+        "paddingTop": 20,
+      }
+    }
+    defaultTextContainer={
+      Object {
+        "flex": 1,
+        "padding": 8,
+      }
+    }
+    elevation={1}
+    endDelta={0}
+    errorColor="#cc3232"
+    errorImageSrc={1}
+    imageSrc={null}
+    imageStyle={
+      Object {
+        "alignSelf": "center",
+        "height": 36,
+        "padding": 8,
+        "width": 36,
+      }
+    }
+    inactiveStatusBarBackgroundColor="black"
+    inactiveStatusBarStyle="default"
+    infoColor="#2B73B6"
+    infoImageSrc={1}
+    messageNumOfLines={3}
+    messageStyle={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "white",
+        "fontSize": 14,
+        "fontWeight": "normal",
+        "textAlign": "left",
+      }
+    }
+    onCancel={null}
+    onClose={null}
+    panResponderEnabled={true}
+    replaceEnabled={true}
+    safeAreaStyle={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+      }
+    }
+    sensitivity={20}
+    showCancel={false}
+    startDelta={-100}
+    successColor="#32A54A"
+    successImageSrc={1}
+    tapToCloseEnabled={true}
+    testID="dropdown-alert"
+    titleNumOfLines={1}
+    titleStyle={
+      Object {
+        "backgroundColor": "transparent",
+        "color": "white",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "textAlign": "left",
+      }
+    }
+    translucent={false}
+    updateStatusBar={true}
+    useNativeDriver={true}
+    warnColor="#cd853f"
+    warnImageSrc={1}
+    wrapperStyle={null}
+    zIndex={null}
+  />
+</DropdownAlert>
+`;
